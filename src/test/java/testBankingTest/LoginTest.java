@@ -16,6 +16,7 @@ public class LoginTest extends BaseTest {
 		login.enter_UsernamePassword("Admin", "Admin");
 		login.clickonlogin();
 		Thread.sleep(3000);
+		System.out.print("Login Successful !!");
 	}
 	
 	
