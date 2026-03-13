@@ -6,7 +6,7 @@
   
     <classes>
 
-      <class name="testBankingTest.LoginTest"/>
+      <class name="testBankingTest.BankingFlowTest"/>
       
       
       

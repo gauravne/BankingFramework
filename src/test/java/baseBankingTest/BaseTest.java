@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -31,8 +32,11 @@ public class BaseTest {
 		
 		if(p.getProperty("browser").equalsIgnoreCase("chrome"))
 		{
+			
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--incognito");
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 		driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
 		driver.manage().window().maximize();
 		}
@@ -50,7 +54,7 @@ public class BaseTest {
 	@AfterTest
 	public void teardown()
 	{
-	//	driver.close();
+		driver.close();
 		
 	}
 	
