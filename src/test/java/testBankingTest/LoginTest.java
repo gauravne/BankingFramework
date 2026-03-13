@@ -24,19 +24,20 @@ public class LoginTest extends BaseTest {
 		LoginPageTest login = new LoginPageTest(driver);
 		ScreenshotTest st = new ScreenshotTest();
 		st.capturescreenshot(driver);
-		login.enter_UsernamePassword("Admin123", "Admin123");
+		login.enter_UsernamePassword("Admin", "Admin");
 		st.capturescreenshot(driver);
 		login.clickonlogin();
 		System.out.println("Login Successful !!");
 		st.capturescreenshot(driver);
 		
-	//	WaitTest wait = new WaitTest();
-	//	WebElement ele = driver.findElement(By.linkText("Open New Account"));
-		//wait.waitforElementtobeVisible(ele, driver);
+	WaitTest wait = new WaitTest();
+		WebElement ele = driver.findElement(By.linkText("Open New Account"));
+		wait.waitforElementtobeVisible(ele, driver);
 		//Open account
 		OpenAccountPageTest openaccount = new OpenAccountPageTest(driver);
 		openaccount.NewAccount();
 		openaccount.submitbtn();
+		Thread.sleep(3000);
 		st.capturescreenshot(driver);
 		System.out.println("New account is created Successfully !!!");
 		
