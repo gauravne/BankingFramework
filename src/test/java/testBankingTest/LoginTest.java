@@ -30,9 +30,9 @@ public class LoginTest extends BaseTest {
 		System.out.println("Login Successful !!");
 		st.capturescreenshot(driver);
 		
-		WaitTest wait = new WaitTest();
-		WebElement ele = driver.findElement(By.linkText("Open New Account"));
-		wait.waitforElementtobeVisible(ele, driver);
+	//	WaitTest wait = new WaitTest();
+	//	WebElement ele = driver.findElement(By.linkText("Open New Account"));
+		//wait.waitforElementtobeVisible(ele, driver);
 		//Open account
 		OpenAccountPageTest openaccount = new OpenAccountPageTest(driver);
 		openaccount.NewAccount();
